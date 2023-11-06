@@ -1,0 +1,49 @@
+<annotation>
+	<folder>my-project-name</folder>
+	<filename>78_orelha_de_elefante.jpg</filename>
+	<path>/my-project-name/78_orelha_de_elefante.jpg</path>
+	<source>
+		<database>Unspecified</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>Não Cortar</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>313</xmin>
+			<ymin>225</ymin>
+			<xmax>551</xmax>
+			<ymax>440</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Não Cortar</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>243</xmin>
+			<ymin>324</ymin>
+			<xmax>362</xmax>
+			<ymax>537</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Não Cortar</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>221</xmin>
+			<ymin>45</ymin>
+			<xmax>448</xmax>
+			<ymax>252</ymax>
+		</bndbox>
+	</object>
+</annotation>
