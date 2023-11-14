@@ -15,24 +15,30 @@ filenames = list(map(lambda name: name.split('.')[0], filenames))
 filenames = list(set(filenames))
 print(f'Número de arquivos: {len(filenames)}')
 
-# Separação entre treino e teste
-train, test = train_test_split(filenames, test_size= 0.2, random_state=42)
+# Separação entre treino, validação e teste
+train, rest = train_test_split(filenames, test_size= 0.3, random_state=42)
+test, val = train_test_split(rest, test_size= 0.5, random_state=42)
 print(f'Número de arquivos de treino: {len(train)}')
+print(f'Número de arquivos de validação: {len(val)}')
 print(f'Número de arquivos de teste: {len(test)}')
 
 # Criar diretório de treino
-train_dir = 'final_dataset/training'
+train_dir = 'final_dataset/train'
 if not os.path.exists(train_dir):
     os.makedirs(train_dir)
     print('Diretório dos arquivos de treino foi criado!')
+    
+# Criar diretório de validação
+val_dir = 'final_dataset/val'
+if not os.path.exists(val_dir):
+    os.makedirs(val_dir)
+    print('Diretório dos arquivos de validação foi criado!')
 
 # Criar diretório de teste
-test_dir = 'final_dataset/testing'
-
+test_dir = 'final_dataset/test'
 if not os.path.exists(test_dir):
     os.makedirs(test_dir)
     print('Diretório dos arquivos de teste foi criado!')
-
 
 # Mover arquivos de treino para o diretório de treino
 for train_file in train:
@@ -40,6 +46,13 @@ for train_file in train:
     annotation = f'{PATH}/{train_file}.txt'
     shutil.move(img, train_dir)
     shutil.move(annotation, train_dir)
+    
+# Mover arquivos de validação para o diretório de validação
+for val_file in val:
+    img = f'{PATH}/{val_file}.jpg'
+    annotation = f'{PATH}/{val_file}.txt'
+    shutil.move(img, val_dir)
+    shutil.move(annotation, val_dir)
 
 # Mover arquivos de teste para o diretório de teste
 for teste_file in test:
